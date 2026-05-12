@@ -47,6 +47,9 @@ clay-and-co/
 ├── scripts/
 ├── images/
 └── backend/src/main/java/
+    ├── ShopServlet.java
+    ├── CustomOrdersServlet.java
+    └── DBConnection.java
 ```
 
 ---
