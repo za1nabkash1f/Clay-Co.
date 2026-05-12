@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <title>Home</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,1..1000&family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
+    <link rel="icon" href="images/favicon_io/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles/index.css">
+</head>
+
+<body>
+    <!--NAVBAR-->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">Clay&Co.</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link google-sans-font active" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link google-sans-font" href="about-us.html">About
+                            Us</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link google-sans-font" href="shop.html">Shop</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link google-sans-font"
+                            href="workshops.html">Workshops</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link google-sans-font" href="events.html">Events</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link google-sans-font"
+                            href="contact-us.html">Contact
+                            Us</a></li>
+                </ul>
+                <div class="d-flex align-items-center gap-3">
+                    <!-- CART ICON -->
+                    <a href="#" class="cart-icon-wrapper" onclick="openCart(event)">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <span id="cart-count" class="cart-badge">0</span>
+                    </a>
+                    <button class="btn" data-bs-toggle="modal" data-bs-target="#signInModal">SIGN IN</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!--SIGN IN-->
+    <div class="modal fade" id="signInModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title headings">Sign In</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body container">
+                    <div class="row">
+                        <div class="mb-3 col">
+                            <label class="google-sans-font">Email</label>
+                        </div>
+                        <div class="mb-3 col">
+                            <input type="text" placeholder="Your email" style="width:100%;">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="mb-3 col">
+                            <label class="google-sans-font">Password</label>
+                        </div>
+                        <div class="mb-3 col">
+                            <input type="password" placeholder="Your password" style="width:100%;">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <p class="google-sans-font" style="font-size:0.85rem;">
+                                Don't have an account? <a href="#" style="color:#9C5A3C;">Sign up</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="book-button">SIGN IN</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--CAROUSEL-->
+    <div id="homeCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="images/the-studio-3.jpeg" class="d-block w-100 carousel-image" alt="the-studio-3">
+                <div class="carousel-caption d-flex flex-column h-100 align-items-center justify-content-center">
+                    <h5><em>Beauty in Imperfection</em></h5>
+                    <p> Each piece tells a story &mdash; shaped by hand, fired with intention, made to be lived with.</p>
+                    <button type="button" class="carousel-button">Explore Collection</button>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="images/the-studio-1.jpeg" class="d-block w-100 carousel-image" alt="the-studio-1">
+                <div class="carousel-caption d-flex flex-column h-100 align-items-center justify-content-center">
+                    <h5><em>Discover the Art of Pottery</em></h5>
+                    <p>Join hands-on workshops, explore handmade ceramics, and shape your creativity in clay.</p>
+                    <button type="button" class="carousel-button">Explore Collection</button>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="images/mug3.jpeg" class="d-block w-100 carousel-image" alt="mug3">
+                <div class="carousel-caption d-flex flex-column h-100 align-items-center justify-content-center">
+                    <h5><em>Handcrafted Ceramics</em></h5>
+                    <p> In our sun-filled studio, we shape, glaze, and fire each item by hand — embracing the small
+                        variations that make
+                        handmade objects feel alive.</p>
+                    <button type="button" class="carousel-button">Explore Collection</button>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#homeCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#homeCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    <!--COLLECTION-->
+    <section id="collection" class="container-fluid py-5 px-3">
+        <div class="text-center mb-4">
+            <h3 class="google-sans-small-font text-muted">OUR WORK</h3>
+            <h1 class="playfair-display-font">The Collection</h1>
+        </div>
+        <div class="row row-cols-1 row-cols-md-3 g-4 overflow-hidden">
+            <div class="col">
+                <div class="card h-100 border-0">
+                    <img src="images/mug3.jpeg" class="card-img-top" alt="mug3" onclick="window.location.href='shop.html#mugs-cups-filter'">
+                    <!-- <button class="filter-btn active" onclick="filterProducts('Mugs &amp; Cups', this)">Mugs &amp; Cups</button> -->
+                    <div class="card-body">
+                        <h5 class="card-title playfair-display-font">Mugs & Cups</h5>
+                        <h6 class="card-subtitle mb-2 text-muted ">Morning rituals, elevated</h6>
+                        <p class="card-text playfair-display-font">From $38</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100 border-0">
+                    <img src="images/plate2.jpeg" class="card-img-top" alt="plate2" onclick="window.location.href='shop.html#plates-bowls-filter'">
+                    <div class="card-body">
+                        <h5 class="card-title playfair-display-font">Plates & Bowls</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Where food meets art</h6>
+                        <p class="card-text playfair-display-font">From $52</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100 border-0">
+                    <img src="images/vase2.jpeg" class="card-img-top" alt="vase2" onclick="window.location.href='shop.html#vases-filter'">
+                    <div class="card-body">
+                        <h5 class="card-title playfair-display-font">Vases</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Sculptural vessels for living spaces</h6>
+                        <p class="card-text playfair-display-font">From $65</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class = "container-fluid text-center mt-3">
+            <button type="button" class="book-button" onclick="window.location.href='shop.html'">SHOP MORE PRODUCTS >></button>
+        </div>
+    </section>
+    <!--WORKSHOP-->
+    <section class="workshop-preview py-5">
+        <div class="container-fluid">
+            <div class="row align-items-center g-5">
+                <div class="col-md-6">
+                    <img src="images/pottery-wheel.jpeg" class="img-fluid" alt="pottery-wheel">
+                </div>
+                <div class="col-md-6">
+                    <h4 class="google-sans-small-font text-muted">LEARN AND CREATE</h4>
+                    <h1 class="playfair-display-font">Pottery <em>Workshops</em></h1>
+                    <p class="section-desc">Join us for hands-on pottery workshops where you can learn to shape, glaze,
+                        and fire your own ceramic pieces. Our expert instructors will guide you through the process,
+                        whether you're a beginner or looking to refine your skills. Experience the joy of creating with
+                        clay in
+                        a welcoming and inspiring environment.</p>
+                    <div class="row gx-2 mb-4">
+                        <div class="col-md-4 col-sm-12 text-center">
+                            <div class="workshop-price">
+                                <h4 class="playfair-display-font">$85</h4>
+                                <h6 class="google-sans-small-font text-muted">Beginner | 3 HRS</h6>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-12 text-center">
+                            <div class="workshop-price">
+                                <h4 class="playfair-display-font">$120</h4>
+                                <h6 class="google-sans-small-font text-muted">Intermediate | 4 HRS</h6>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-12 text-center">
+                            <div class="workshop-price">
+                                <h4 class="playfair-display-font">$160</h4>
+                                <h6 class="google-sans-small-font text-muted">Advanced | 6 HRS</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" class="book-button"
+                        onclick="window.location.href='workshops.html'">View All Workshops</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--CUSTOMER REVIEWS-->
+    <section class="testimonial-section py-5">
+        <div class="testimonial-cards container text-center">
+            <p class="google-sans-small-font text-muted mb-1">WHAT PEOPLE SAY</p>
+            <h1 class="playfair-display-font mb-5">Customer Reviews</h1>
+            <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center" id="testimonial-row">
+                <div class="col">
+                    <div class="card h-100 testimonal-card  shadow-sm p-4">
+                        <div class="card-body text-start d-flex flex-column">
+                            <div class="stars mb-3">★★★★★</div>
+                            <p class="card-text fst-italic flex-grow-1">"The most beautiful mug I've ever owned. You can
+                                feel the craftsmanship in every curve."</p>
+                            <div class="mt-4">
+                                <h6 class="mb-0 fw-bold">Zainab K.</h6>
+                                <small class="text-muted">Hamilton, ON</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 testimonal-card  shadow-sm p-4">
+                        <div class="card-body text-start d-flex flex-column">
+                            <div class="stars mb-3">★★★★★</div>
+                            <p class="card-text fst-italic flex-grow-1">"Took the beginner workshop — absolutely magical
+                                experience. I'm hooked on pottery now."</p>
+                            <div class="mt-4">
+                                <h6 class="mb-0 fw-bold">Nuha P.</h6>
+                                <small class="text-muted">Montréal, QC</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100  testimonal-card shadow-sm p-4">
+                        <div class="card-body text-start d-flex flex-column">
+                            <div class="stars mb-3">★★★★★</div>
+                            <p class="card-text fst-italic flex-grow-1">"Custom ordered a set of plates for our wedding.
+                                They exceeded every expectation."</p>
+                            <div class="mt-4">
+                                <h6 class="mb-0 fw-bold">Areej S.</h6>
+                                <small class="text-muted">Toronto, ON</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button id="testimonial-button">LEAVE A TESTIMONIAL</button>
+        </div>
+        <!--LEAVE A TESTIMONIAL-->
+        <div class="container testimonial-form" id="testimonial-form">
+            <p class="playfair-display-font text-center" style="font-size: 24px;">Tell us a little bit about yourself
+                and share your story!</p>
+            <form id="formSubmit">
+                <div class="row">
+                    <div class="col-4">
+                        <label for="userName" class="google-sans-font">Name: </label>
+                    </div>
+                    <div class="col-8">
+                        <input type="text" id="userName" required><br><br>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-4">
+                        <label for="userCity" class="google-sans-font">City: </label>
+                    </div>
+                    <div class="col-8">
+                        <input type="text" id="userCity" required><br><br>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-4">
+                        <label for="userState" class="google-sans-font">State:</label>
+                    </div>
+                    <div class="col-8">
+                        <input type="text" id="userState" required><br><br>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-4">
+                        <span class="google-sans-font">Rating:</span>
+                    </div>
+                    <div class="col-8">
+                        <div class="rating-card">
+                            <div class="rating-inputs mb-3">
+                                <input type="radio" id="star5" name="star-rating" value="5">
+                                <label for="star5" class="bi bi-star-fill"></label>
+                                <input type="radio" id="star4" name="star-rating" value="4">
+                                <label for="star4" class="bi bi-star-fill"></label>
+                                <input type="radio" id="star3" name="star-rating" value="3">
+                                <label for="star3" class="bi bi-star-fill"></label>
+                                <input type="radio" id="star2" name="star-rating" value="2">
+                                <label for="star2" class="bi bi-star-fill"></label>
+                                <input type="radio" id="star1" name="star-rating" value="1">
+                                <label for="star1" class="bi bi-star-fill"></label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-4">
+                        <label for="userText" class="google-sans-font">Message:</label>
+                    </div>
+                    <div class="col-8">
+                        <input type="text" id="userText" required><br><br>
+                    </div>
+                </div>
+                <button type="submit" class="submitbuttons">Submit</button>
+                <button type="button" class="submitbuttons" id="cancelTestimonialBtn"
+                    style="background-color: rgb(252, 194, 188);">Cancel</button>
+                <br>
+                <br>
+            </form>
+        </div>
+    </section>
+    <!--ABOUT US PREVIEW-->
+    <section class="about-us-preview py-5">
+        <div class="container-fluid">
+            <div class="row align-items-center g-5 flex-column-reverse flex-md-row">
+                <div class="col-md-6">
+                    <h4 class="google-sans-small-font text-muted">OUR STORY</h4>
+                    <h1 class="playfair-display-font">About <em>Us</em></h1>
+                    <p class="section-desc">Every piece begins as a lump of clay and a quiet intention. In our
+                        sun-filled studio, we shape, glaze, and fire each item by hand — embracing the small
+                        variations that make handmade objects feel alive. We believe in slow craft. No two pieces are
+                        identical, and that's precisely the point. </p>
+                    <button type="button" class="book-button"
+                        onclick="window.location.href='about-us.html'">Our Process</button>
+                </div>
+                <div class="col-md-6">
+                    <img src="images/bowl.jpeg" class="img-fluid" alt="bowl">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--FOOTER-->
+    <footer>
+        <hr>
+        <br>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-3 col-sm-12">
+                    <p class="footer-brand">Clay&Co.</p>
+                    <p class="footer-desc">Discover the art of pottery at Clay&Co.
+                        Join hands-on workshops, explore handmade ceramics, and shape your creativity in clay.</p>
+                    <br>
+                </div>
+                <div class="col-lg-3 col-sm-12">
+                    <p class="footer-heading">SHOP</p>
+                    <ul class="footer-links">
+                        <li><a href="shop.html">All Products</a></li>
+                        <li><a href="shop.html">Custom Orders</a></li>
+                        <li><a href="shop.html">Cart</a></li>
+                    </ul>
+                    <br>
+                </div>
+                <div class="col-lg-3 col-sm-12">
+                    <p class="footer-heading">EXPERIENCE</p>
+                    <ul class="footer-links">
+                        <li><a href="workshops.html">Workshops</a></li>
+                        <li><a href="events.html">Events</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="about-us.html">About Us</a></li>
+                    </ul>
+                    <br>
+                </div>
+                <div class="col-lg-3 col-sm-12">
+                    <p class="footer-heading">CONNECT</p>
+                    <ul class="footer-links">
+                        <li><a href="contact-us.html">Contact Form</a></li>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">Pinterest</a></li>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">hello@ClayandCo.studio</a></li>
+                    </ul>
+                    <br>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 2026 Clay&Co. All rights reserved.
+        </div>
+    </footer>
+    <!--CART OVERLAY-->
+    <div id="cart-overlay"></div>
+    <div id="cart-sidebar">
+        <div class="cart-header">
+            <h2>Your Cart</h2>
+            <button onclick="closeCart()">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <div id="cart-items-container"></div>
+        <div id="cart-footer" style="display:none;">
+            <div
+                style="display:flex; justify-content:space-between; font-family:'Google Sans',sans-serif; font-size:0.95rem; color:#2E1E16; font-weight:600;">
+                <span>Total</span>
+                <span id="cart-total">$0</span>
+            </div>
+            <button class="cart-checkout-btn">PROCEED TO CHECKOUT</button>
+            <button class="cart-continue-btn" onclick="closeCart()">CONTINUE SHOPPING</button>
+        </div>
+    </div>
+    <script src="scripts/auth.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <script src="scripts/index.js"></script>
+    <script src="scripts/CartIcon.js"></script>
+</body>
+
+</html>

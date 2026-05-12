@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1"
+	charset="UTF-8">
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+	crossorigin="anonymous">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<title>Workshops</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+	href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,1..1000&family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap"
+	rel="stylesheet">
+<link rel="icon" href="images/favicon_io/favicon.ico"
+	type="image/x-icon">
+<link rel="stylesheet" href="styles/workshops.css">
+</head>
+
+<body>
+
+	<!-- ===== NAVBAR ===== -->
+	<nav class="navbar navbar-expand-lg">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="index.html">Clay&amp;Co.</a>
+			<button class="navbar-toggler" type="button"
+				data-bs-toggle="collapse" data-bs-target="#navbarNav"
+				aria-controls="navbarNav" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNav">
+				<ul class="navbar-nav me-auto">
+					<li class="nav-item"><a class="nav-link google-sans-font"
+						href="index.html">Home</a></li>
+					<li class="nav-item"><a class="nav-link google-sans-font"
+						href="about-us.html">About Us</a></li>
+					<li class="nav-item"><a class="nav-link google-sans-font"
+						href="shop.html">Shop</a></li>
+					<li class="nav-item">
+  					  <a class="nav-link google-sans-font active" href="workshops.html">Workshops</a>
+					</li>
+					<li class="nav-item"><a class="nav-link google-sans-font"
+						href="events.html">Events</a></li>
+					<li class="nav-item"><a class="nav-link google-sans-font"
+						href="contact-us.html">Contact Us</a></li>
+				</ul>
+				<div class="d-flex align-items-center gap-3">
+					<!-- CART ICON -->
+					<a href="#" class="cart-icon-wrapper" onclick="openCart(event)">
+						<i class="fa-solid fa-cart-shopping"></i> <span id="cart-count"
+						class="cart-badge">0</span>
+					</a>
+					<button class="btn" data-bs-toggle="modal"
+						data-bs-target="#signInModal">SIGN IN</button>
+				</div>
+			</div>
+		</div>
+	</nav>
+
+	<!-- ===== SIGN IN MODAL ===== -->
+	<div class="modal fade" id="signInModal" tabindex="-1">
+		<div class="modal-dialog modal-dialog-centered">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title headings">Sign In</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+				</div>
+				<div class="modal-body container">
+					<div class="row">
+						<div class="mb-3 col">
+							<label class="google-sans-font">Email</label>
+						</div>
+						<div class="mb-3 col">
+							<input type="text" id="signInEmail" placeholder="Your email" style="width: 100%;">
+						</div>
+					</div>
+					<div class="row">
+						<div class="mb-3 col">
+							<label class="google-sans-font">Password</label>
+						</div>
+						<div class="mb-3 col">
+							<input type="password" id="signInPassword" placeholder="Your password"
+								style="width: 100%;">
+						</div>
+					</div>
+					<div class="row">
+						<div class="col">
+							<p class="google-sans-font" style="font-size: 0.85rem;">
+								Don't have an account? <a href="#" style="color: #9C5A3C;">Sign
+									up</a>
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="book-button" id="signInBtn">SIGN IN</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- ===== BOOKING MODAL ===== -->
+	<div class="modal fade" id="bookingModal" tabindex="-1">
+		<div class="modal-dialog modal-dialog-centered">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title headings">Book Your Spot</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+				</div>
+				<div class="modal-body container">
+					<div class="row">
+						<div class="mb-3 col">
+							<label class="google-sans-font">Full Name</label>
+						</div>
+						<div class="mb-3 col">
+							<input type="text" id="bookingName" placeholder="Your name"
+								style="width: 100%;">
+						</div>
+					</div>
+					<div class="row">
+						<div class="mb-3 col">
+							<label class="google-sans-font">Email</label>
+						</div>
+						<div class="mb-3 col">
+							<input type="text" id="bookingEmail" placeholder="Your email"
+								style="width: 100%;">
+						</div>
+					</div>
+					<div class="row">
+						<div class="mb-3 col">
+							<label class="google-sans-font">Number of Spots</label>
+						</div>
+						<div class="mb-3 col">
+							<input type="text" id="numberOfSpots"
+								placeholder="How many spots?">
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="book-button" id="confirmationButton">CONFIRM
+						BOOKING</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- ===== MAIN WORKSHOPS SECTION ===== -->
+	<div id="wrkshp">
+		<br>
+		<h4 class="google-sans-font">Learn &amp; Create</h4>
+		<br>
+		<h2 class="headings">Workshops</h2>
+		<br>
+		<h4 class="google-sans-font">Hands-on pottery classes for all
+			skill levels. Small groups, personal instruction, all materials
+			included</h4>
+
+		<!-- Admin Button — hidden until session confirms admin -->
+		<button id="admin" style="display: none;">Admin</button>
+
+		<br> <br>
+
+		<!-- Admin Input Form (hidden by default, shown after admin clicks button) -->
+		<div class="container" id="input-form" style="display: none">
+			<form>
+				<div class="row">
+					<div class="col-4">
+						<label for="workshopName" class="google-sans-font">Workshop
+							Name: </label>
+					</div>
+					<div class="col-8">
+						<input type="text" id="workshopName"><br>
+						<br>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-4">
+						<label for="workshopDate" class="google-sans-font">Workshop
+							Date: </label>
+					</div>
+					<div class="col-8">
+						<input type="text" id="workshopDate"><br>
+						<br>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-4">
+						<label for="workshopDuration" class="google-sans-font">Workshop
+							Duration:</label>
+					</div>
+					<div class="col-8">
+						<input type="text" id="workshopDuration"><br>
+						<br>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-4">
+						<label for="availableSpots" class="google-sans-font">Available
+							Spots:</label>
+					</div>
+					<div class="col-8">
+						<input type="text" id="availableSpots"><br>
+						<br>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-4">
+						<label for="workshopDesc" class="google-sans-font">Workshop
+							Description:</label>
+					</div>
+					<div class="col-8">
+						<input type="text" id="workshopDesc"><br>
+						<br>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-4">
+						<label for="workshopPrice" class="google-sans-font">Workshop
+							Price:</label>
+					</div>
+					<div class="col-8">
+						<input type="text" id="workshopPrice"><br>
+						<br>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-4">
+						<label class="google-sans-font">Level:</label>
+					</div>
+					<div class="col-8">
+						<input type="radio" id="levelBeginner" name="level"
+							value="Beginner"> <label for="levelBeginner"
+							class="google-sans-font"> Beginner</label><br> <input
+							type="radio" id="levelIntermediate" name="level"
+							value="Intermediate"> <label for="levelIntermediate"
+							class="google-sans-font"> Intermediate</label><br> <input
+							type="radio" id="levelExpert" name="level" value="Expert">
+						<label for="levelExpert" class="google-sans-font"> Expert</label><br>
+					</div>
+				</div>
+				<br>
+				<button type="button" id="formSubmit" class="submitbuttons">Submit</button>
+				<br>
+				<br>
+			</form>
+		</div>
+
+		<br>
+	</div>
+	<!-- /#wrkshp -->
+
+	<!-- ===== FOOTER ===== -->
+	<footer>
+		<hr>
+		<br>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-lg-3 col-sm-12">
+					<p class="footer-brand">Clay&amp;Co.</p>
+					<p class="footer-desc">Discover the art of pottery at
+						Clay&amp;Co. Join hands-on workshops, explore handmade ceramics,
+						and shape your creativity in clay.</p>
+					<br>
+				</div>
+				<div class="col-lg-3 col-sm-12">
+					<p class="footer-heading">SHOP</p>
+					<ul class="footer-links">
+						<li><a href="shop.html">All Products</a></li>
+						<li><a href="shop.html">Custom Orders</a></li>
+						<li><a href="shop.html">Cart</a></li>
+					</ul>
+					<br>
+				</div>
+				<div class="col-lg-3 col-sm-12">
+					<p class="footer-heading">EXPERIENCE</p>
+					<ul class="footer-links">
+						<li><a href="workshops.html">Workshops</a></li>
+						<li><a href="events.html">Events</a></li>
+						<li><a href="shop.html">Shop</a></li>
+						<li><a href="about-us.html">About Us</a></li>
+					</ul>
+					<br>
+				</div>
+				<div class="col-lg-3 col-sm-12">
+					<p class="footer-heading">CONNECT</p>
+					<ul class="footer-links">
+						<li><a href="contact-us.html">Contact Form</a></li>
+						<li><a href="#">Instagram</a></li>
+						<li><a href="#">Pinterest</a></li>
+						<li><a href="#">Facebook</a></li>
+						<li><a href="#">hello@ClayandCo.studio</a></li>
+					</ul>
+					<br>
+				</div>
+			</div>
+		</div>
+		<div class="footer-bottom">&copy; 2026 Clay&amp;Co. All rights
+			reserved.</div>
+	</footer>
+
+	<!-- ===== CART SIDEBAR ===== -->
+	<div id="cart-overlay"></div>
+	<div id="cart-sidebar">
+		<div class="cart-header">
+			<h2>Your Cart</h2>
+			<button onclick="closeCart()">
+				<i class="fa-solid fa-xmark"></i>
+			</button>
+		</div>
+		<div id="cart-items-container"></div>
+		<div id="cart-footer" style="display: none;">
+			<div
+				style="display: flex; justify-content: space-between; font-family: 'Google Sans', sans-serif; font-size: 0.95rem; color: #2E1E16; font-weight: 600;">
+				<span>Total</span> <span id="cart-total">$0</span>
+			</div>
+			<button class="cart-checkout-btn">PROCEED TO CHECKOUT</button>
+			<button class="cart-continue-btn" onclick="closeCart()">CONTINUE
+				SHOPPING</button>
+		</div>
+	</div>
+
+    <script src="scripts/auth.js"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+		crossorigin="anonymous"></script>
+	<script src="scripts/workshops.js"></script>
+	<script src="scripts/CartIcon.js"></script>
+
+</body>
+</html>

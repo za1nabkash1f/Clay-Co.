@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,1..1000&family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles/custom-order.css">
+  <title>Custom Orders – Clay&Co.</title>
+  <link rel="icon" href="images/favicon_io/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">Clay&Co.</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item"><a class="nav-link google-sans-font" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link google-sans-font" href="about-us.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link google-sans-font" href="shop.html">Shop</a></li>
+          <li class="nav-item"><a class="nav-link google-sans-font" href="workshops.html">Workshops</a></li>
+          <li class="nav-item"><a class="nav-link google-sans-font" href="events.html">Events</a></li>
+          <li class="nav-item"><a class="nav-link google-sans-font" href="contact-us.html">Contact Us</a></li>
+        </ul>
+        <div class="d-flex align-items-center gap-3">
+          <a href="#" class="cart-icon-wrapper" onclick="openCart(event)">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span id="cart-count" class="cart-badge">0</span>
+          </a>
+          <button class="btn" data-bs-toggle="modal" data-bs-target="#signInModal">SIGN IN</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- SIGN IN MODAL -->
+  <div class="modal fade" id="signInModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title headings">Sign In</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body container">
+          <div class="row">
+            <div class="mb-3 col"><label class="google-sans-font">Email</label></div>
+            <div class="mb-3 col">
+              <input type="text" id="signInEmail" placeholder="Your email" style="width:100%;">
+            </div>
+          </div>
+          <div class="row">
+            <div class="mb-3 col"><label class="google-sans-font">Password</label></div>
+            <div class="mb-3 col">
+              <input type="password" id="signInPassword" placeholder="Your password" style="width:100%;">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <p class="google-sans-font" style="font-size:0.85rem;">
+                Don't have an account? <a href="#" style="color:#9C5A3C;">Sign up</a>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="book-button" id="signInBtn">SIGN IN</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONFIRMATION MODAL -->
+  <div class="modal fade" id="confirmModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title headings">Order Submitted!</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <p class="google-sans-font">Thank you for your custom order request. We'll review your specifications and get back to you within 2–3 business days.</p>
+          <div id="order-summary" class="order-summary-box"></div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="book-button" data-bs-dismiss="modal">CLOSE</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section class="custom-hero">
+    <div class="custom-hero-text">
+      <p class="google-sans-font hero-label">MADE FOR YOU</p>
+      <h1 class="headings">Custom Orders</h1>
+      <p class="google-sans-font hero-sub">Tell us your vision and we'll bring it to life in clay. Every piece is handcrafted to your exact specifications.</p>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="how-it-works">
+    <div class="container">
+      <h2 class="headings text-center">How It Works</h2>
+      <br>
+      <div class="row g-4 text-center">
+        <div class="col-md-4">
+          <div class="step-card">
+            <div class="step-number">01</div>
+            <h5 class="google-sans-font step-title">Fill the Form</h5>
+            <p class="google-sans-font step-desc">Describe your piece — size, color, finish, and any special requests.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="step-card">
+            <div class="step-number">02</div>
+            <h5 class="google-sans-font step-title">We Review</h5>
+            <p class="google-sans-font step-desc">Our team reviews your request and contacts you with a quote within 2–3 days.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="step-card">
+            <div class="step-number">03</div>
+            <h5 class="google-sans-font step-title">We Create</h5>
+            <p class="google-sans-font step-desc">Once approved, your piece is handcrafted and delivered within 2–4 weeks.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ORDER FORM -->
+  <section class="order-form-section">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="order-form-card">
+            <h2 class="headings">Request a Custom Piece</h2>
+            <p class="google-sans-font" style="color:#7A6A60; margin-bottom:32px;">
+              Fill in the details below and we'll be in touch soon.
+            </p>
+
+            <div class="form-row-custom">
+              <div class="form-group-custom">
+                <label class="google-sans-font form-label-custom">Full Name</label>
+                <input type="text" id="customName" placeholder="Your name">
+              </div>
+              <div class="form-group-custom">
+                <label class="google-sans-font form-label-custom">Email</label>
+                <input type="text" id="customEmail" placeholder="Your email">
+              </div>
+            </div>
+
+            <div class="form-row-custom">
+              <div class="form-group-custom">
+                <label class="google-sans-font form-label-custom">Product Type</label>
+                <select id="customType" class="custom-select">
+                  <option value="">Select a type...</option>
+                  <option value="Mug">Mug</option>
+                  <option value="Bowl">Bowl</option>
+                  <option value="Plate">Plate</option>
+                  <option value="Vase">Vase</option>
+                  <option value="Set">Set</option>
+                  <option value="Decorative">Decorative Piece</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+              <div class="form-group-custom">
+                <label class="google-sans-font form-label-custom">Quantity</label>
+                <input type="number" id="customQty" placeholder="e.g. 2" min="1">
+              </div>
+            </div>
+
+            <div class="form-row-custom">
+              <div class="form-group-custom">
+                <label class="google-sans-font form-label-custom">Preferred Color / Glaze</label>
+                <input type="text" id="customColor" placeholder="e.g. Sage green matte">
+              </div>
+              <div class="form-group-custom">
+                <label class="google-sans-font form-label-custom">Budget (USD)</label>
+                <input type="text" id="customBudget" placeholder="e.g. $50–$100">
+              </div>
+            </div>
+
+            <div class="form-group-custom" style="margin-bottom: 24px;">
+              <label class="google-sans-font form-label-custom">Special Instructions</label>
+              <textarea id="customNotes" rows="4" placeholder="Any other details — inscriptions, dimensions, occasion..."></textarea>
+            </div>
+
+            <button class="book-button" id="submitCustomOrder" style="width:100%; padding: 16px;">
+              SUBMIT REQUEST
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAST CUSTOM WORK -->
+  <section class="past-work-section">
+    <div class="container">
+      <h2 class="headings text-center">Past Custom Work</h2>
+      <p class="google-sans-font text-center" style="color:#7A6A60; margin-bottom:40px;">
+        A glimpse of what we've made for our customers.
+      </p>
+      <div class="row g-4" id="customOrdersGrid">
+        <!-- Populated by custom-order.js -->
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <hr><br>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-3 col-sm-12">
+          <p class="footer-brand">Clay&Co.</p>
+          <p class="footer-desc">Discover the art of pottery at Clay&Co. Join hands-on workshops, explore
+            handmade ceramics, and shape your creativity in clay.</p><br>
+        </div>
+        <div class="col-lg-3 col-sm-12">
+          <p class="footer-heading">SHOP</p>
+          <ul class="footer-links">
+            <li><a href="shop.html">All Products</a></li>
+            <li><a href="custom-order.html">Custom Orders</a></li>
+            <li><a href="shop.html">Cart</a></li>
+          </ul><br>
+        </div>
+        <div class="col-lg-3 col-sm-12">
+          <p class="footer-heading">EXPERIENCE</p>
+          <ul class="footer-links">
+            <li><a href="workshops.html">Workshops</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="about-us.html">About Us</a></li>
+          </ul><br>
+        </div>
+        <div class="col-lg-3 col-sm-12">
+          <p class="footer-heading">CONNECT</p>
+          <ul class="footer-links">
+            <li><a href="contact-us.html">Contact Form</a></li>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">Pinterest</a></li>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">hello@ClayandCo.studio</a></li>
+          </ul><br>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 Clay&Co. All rights reserved.</div>
+  </footer>
+
+  <!-- CART SIDEBAR -->
+  <div id="cart-overlay"></div>
+  <div id="cart-sidebar">
+    <div class="cart-header">
+      <h2>Your Cart</h2>
+      <button onclick="closeCart()"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div id="cart-items-container"></div>
+    <div id="cart-footer" style="display:none;">
+      <div style="display:flex; justify-content:space-between; font-family:'Google Sans',sans-serif; font-size:0.95rem; color:#2E1E16; font-weight:600;">
+        <span>Total</span><span id="cart-total">$0</span>
+      </div>
+      <button class="cart-checkout-btn">PROCEED TO CHECKOUT</button>
+      <button class="cart-continue-btn" onclick="closeCart()">CONTINUE SHOPPING</button>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+  <script src="scripts/auth.js"></script>
+  <script src="scripts/custom-order.js"></script>
+  <script src="scripts/CartIcon.js"></script>
+</body>
+</html>

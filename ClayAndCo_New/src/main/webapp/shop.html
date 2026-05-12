@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,1..1000&family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles/shop.css">
+  <title>Shop</title>
+  <link rel="icon" href="images/favicon_io/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">Clay&Co.</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item"><a class="nav-link google-sans-font" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link google-sans-font" href="about-us.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link google-sans-font active" href="shop.html">Shop</a></li>
+          <li class="nav-item"><a class="nav-link google-sans-font" href="workshops.html">Workshops</a></li>
+          <li class="nav-item"><a class="nav-link google-sans-font" href="events.html">Events</a></li>
+          <li class="nav-item"><a class="nav-link google-sans-font" href="contact-us.html">Contact Us</a></li>
+        </ul>
+        <div class="d-flex align-items-center gap-3">
+          <a href="#" class="cart-icon-wrapper" onclick="openCart(event)">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span id="cart-count" class="cart-badge">0</span>
+          </a>
+          <button class="btn" data-bs-toggle="modal" data-bs-target="#signInModal">SIGN IN</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- SIGN IN MODAL -->
+  <div class="modal fade" id="signInModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title headings">Sign In</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body container">
+          <div class="row">
+            <div class="mb-3 col"><label class="google-sans-font">Email</label></div>
+            <div class="mb-3 col">
+              <input type="text" id="signInEmail" placeholder="Your email" style="width:100%;">
+            </div>
+          </div>
+          <div class="row">
+            <div class="mb-3 col"><label class="google-sans-font">Password</label></div>
+            <div class="mb-3 col">
+              <input type="password" id="signInPassword" placeholder="Your password" style="width:100%;">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <p class="google-sans-font" style="font-size:0.85rem;">
+                Don't have an account? <a href="#" style="color:#9C5A3C;">Sign up</a>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="book-button" id="signInBtn">SIGN IN</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRODUCT MODAL -->
+  <div class="modal fade product-modal" id="productModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row g-4">
+            <div class="col-md-6">
+              <img id="modal-img" src="" alt="" class="modal-product-img" />
+            </div>
+            <div class="col-md-6 d-flex flex-column justify-content-center">
+              <div id="modal-category" class="modal-product-category"></div>
+              <div id="modal-name" class="modal-product-name"></div>
+              <div id="modal-price" class="modal-product-price"></div>
+              <div id="modal-rating" class="modal-product-rating"></div>
+              <div id="modal-stock" class="modal-stock-indicator"></div>
+              <p id="modal-desc" class="modal-product-desc"></p>
+              <div class="quantity-selector">
+                <button class="qty-btn" onclick="changeQty(-1)">-</button>
+                <span id="qty-display">1</span>
+                <button class="qty-btn" onclick="changeQty(1)">+</button>
+              </div>
+              <button class="modal-add-btn" onclick="addToCartFromModal()">
+                <i class="fa-solid fa-cart-shopping"></i> ADD TO CART
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CART OVERLAY -->
+  <div id="cart-overlay" onclick="closeCart()"></div>
+  <div id="cart-sidebar">
+    <div class="cart-header">
+      <h2 class="cart-title">Your Cart</h2>
+      <button class="cart-close-btn" onclick="closeCart()">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+    <div id="cart-items-container"></div>
+    <div id="cart-footer">
+      <div class="cart-total-row">
+        <span class="cart-total-label">Total</span>
+        <span id="cart-total" class="cart-total-amount">$0</span>
+      </div>
+      <button class="cart-checkout-btn">PROCEED TO CHECKOUT</button>
+      <button class="cart-continue-btn" onclick="closeCart()">CONTINUE SHOPPING</button>
+    </div>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <div class="container">
+    <section class="theShop">
+      <div class="shop-header">
+        <h3>BROWSE</h3>
+        <h1>The Shop</h1>
+      </div>
+      <div class="filter-bar">
+        <button class="filter-btn active" onclick="filterProducts('all', this)">All</button>
+        <button id="mugs-cups-filter" class="filter-btn" onclick="filterProducts('Mugs & Cups', this)">Mugs & Cups</button>
+        <button id="plates-bowls-filter" class="filter-btn" onclick="filterProducts('Plates & Bowls', this)">Plates & Bowls</button>
+        <button id="vases-filter" class="filter-btn" onclick="filterProducts('Vases', this)">Vases</button>
+        <button id="sets-filter" class="filter-btn" onclick="filterProducts('Sets', this)">Sets</button>
+        <button id="decorative-filter" class="filter-btn" onclick="filterProducts('Decorative', this)">Decorative</button>
+      </div>
+      <div class="product-grid" id="productGrid"></div>
+      <a href="custom-order.html">
+		    <button class="custom-order-btn">CUSTOM ORDER</button>
+		</a>
+    </section>
+      
+  </div>
+  
+	  
+
+  <footer>
+    <hr><br>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-3 col-sm-12">
+          <p class="footer-brand">Clay&Co.</p>
+          <p class="footer-desc">Discover the art of pottery at Clay&Co.
+            Join hands-on workshops, explore handmade ceramics, and shape your creativity in clay.</p><br>
+        </div>
+        <div class="col-lg-3 col-sm-12">
+          <p class="footer-heading">SHOP</p>
+          <ul class="footer-links">
+            <li><a href="shop.html">All Products</a></li>
+            <li><a href="shop.html">Custom Orders</a></li>
+            <li><a href="shop.html">Cart</a></li>
+          </ul><br>
+        </div>
+        <div class="col-lg-3 col-sm-12">
+          <p class="footer-heading">EXPERIENCE</p>
+          <ul class="footer-links">
+            <li><a href="workshops.html">Workshops</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="about-us.html">About Us</a></li>
+          </ul><br>
+        </div>
+        <div class="col-lg-3 col-sm-12">
+          <p class="footer-heading">CONNECT</p>
+          <ul class="footer-links">
+            <li><a href="contact-us.html">Contact Form</a></li>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">Pinterest</a></li>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">hello@ClayandCo.studio</a></li>
+          </ul><br>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 Clay&Co. All rights reserved.</div>
+  </footer>
+
+  <!-- Scripts — Bootstrap first, then auth, then page JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+  <script src="scripts/auth.js"></script>
+  <script src="scripts/shop.js"></script>
+  <script src="scripts/CartIcon.js"></script>
+  <script>
+    window.onload = function () {
+      if (window.location.hash === "#mugs-cups-filter") document.getElementById("mugs-cups-filter").click();
+      if (window.location.hash === "#plates-bowls-filter") document.getElementById("plates-bowls-filter").click();
+      if (window.location.hash === "#vases-filter") document.getElementById("vases-filter").click();
+      if (window.location.hash === "#sets-filter") document.getElementById("sets-filter").click();
+      if (window.location.hash === "#decorative-filter") document.getElementById("decorative-filter").click();
+    };
+  </script>
+</body>
+</html>
