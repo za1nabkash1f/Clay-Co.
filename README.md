@@ -35,23 +35,6 @@ Built with JavaScript, Bootstrap 5, Java Servlets, JDBC, and MySQL.
 - MySQL
 
 ---
-
-## 📁 Project Structure
-
-```text
-clay-and-co/
-├── index.html
-├── shop.html
-├── custom-order.html
-├── styles/
-├── scripts/
-├── images/
-└── backend/src/main/java/
-    ├── ShopServlet.java
-    ├── CustomOrdersServlet.java
-    └── DBConnection.java
-```
-
 ---
 
 ## ⚙️ Key Functionalities
